@@ -1,16 +1,17 @@
 const generateRandomNumber = function(from, to){
-    if (from < 0 || to < 0){
-      console.log ('Неверный диапазон');
-    }
-    if (from > to){
-      console.log ('Неверный диапазон');
-    }
+  if (from < 0 || to < 0){
+    return 0;
+  }
+  if (from > to){
+    return 0;
+  }
 
-    return Math.random() * (from - to) + from;
-}
+  return Math.random() * (from - to) + from;
+};
+
 generateRandomNumber();
 
-let functionName = function (stroke, maxLength){
+const functionName = function (stroke, maxLength){
   if (stroke.length > maxLength ){
     return false;
   }
