@@ -1,4 +1,4 @@
-let generateRandomNumber = function(from, to){
+const generateRandomNumber = function(from, to){
     if (from < 0 || to < 0){
       console.log ('Неверный диапазон');
     }
@@ -8,11 +8,13 @@ let generateRandomNumber = function(from, to){
 
     return Math.random() * (from - to) + from;
 }
+generateRandomNumber();
 
-let functionname = function (stroke, maxLength){
+let functionName = function (stroke, maxLength){
   if (stroke.length > maxLength ){
     return false;
   }
   return true;
 }
 
+functionName();
