@@ -9,13 +9,13 @@ const generateRandomNumber = function(from, to){
   return Math.random() * (from - to) + from;
 };
 
-generateRandomNumber();
+generateRandomNumber(1, 16);
 
 const functionName = function (stroke, maxLength){
   if (stroke.length > maxLength ){
     return false;
   }
   return true;
-}
+};
 
-functionName();
+functionName('project', 23);
