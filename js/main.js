@@ -53,9 +53,9 @@ const createObject = () => {
   };
 };
 
-let similarWizards = [];
+let similarObjects = [];
 for (let i=0;i<25;i++){
-  similarWizards[i]=createObject();
+  similarObjects[i]=createObject();
 };
 
 
