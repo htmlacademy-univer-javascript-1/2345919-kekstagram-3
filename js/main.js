@@ -1,21 +1,63 @@
+let id = [];
+let URL = [];
+let likes = [];
+let comments = [];
+const description=[
+  'cats',
+  'home',
+  'family',
+  'vacation',
+  'work'
+];
+
+for (let i = 1; i<26; i++){
+  id+=i;
+  URL[i-1] = 'photos/'+i+'.jpg';
+}
+
+for (let i = 0; i<201; i++){
+  if (i>15){
+    likes+=i;
+  }
+  else{
+    comments+=i;
+  }
+};
+
+
 const generateRandomNumber = function(from, to){
-  if (from < 0 || to < 0){
-    return 0;
-  }
-  if (from > to){
-    return 0;
-  }
+  let min = Math.ceil(Math.min(Math.abs(from), Math.abs(to)));
+  let max  = Math.floor(Math.max(Math.abs(from), Math.abs(to)));
 
-  return Math.random() * (from - to) + from;
+  return Math.floor(Math.random() * (max- min) + min);
 };
 
-generateRandomNumber(1, 16);
 
-const functionName = function (stroke, maxLength){
-  if (stroke.length > maxLength ){
-    return false;
-  }
-  return true;
+
+function checkStringLength (string, length) {
+  return string.length <= length;
 };
 
-functionName('project', 23);
+checkStringLength('project', 23);
+
+const generateRandomArrayElement = function(array){
+  let el = generateRandomNumber(0,array.length-1);
+  return array[el];
+};
+
+const createObject = () => {
+  return {
+    id: generateRandomArrayElement(id),
+    URL: generateRandomArrayElement(URL),
+    likes: generateRandomArrayElement(likes),
+    comments: generateRandomArrayElement(comments),
+    description: generateRandomArrayElement(description),
+  };
+};
+
+let similarWizards = [];
+for (let i=0;i<25;i++){
+  console.log(createObject());
+};
+
+
