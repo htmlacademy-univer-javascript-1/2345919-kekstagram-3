@@ -1,7 +1,7 @@
-let id = [];
-let URL = [];
-let likes = [];
-let comments = [];
+const id = [];
+const URL = [];
+const likes = [];
+const comments = [];
 const description=[
   'cats',
   'home',
@@ -11,28 +11,26 @@ const description=[
 ];
 
 for (let i = 1; i<26; i++){
-  id+=i;
-  URL[i-1] = 'photos/'+i+'.jpg';
+  id[i-1]=i;
+  URL[i-1] = "photos/" + i + ".jpg";
 }
 
 for (let i = 0; i<201; i++){
   if (i>15){
-    likes+=i;
+    likes[i-15]=i;
   }
   else{
-    comments+=i;
+    comments[i-1]=i;
   }
-};
+}
 
 
 const generateRandomNumber = function(from, to){
-  let min = Math.ceil(Math.min(Math.abs(from), Math.abs(to)));
-  let max  = Math.floor(Math.max(Math.abs(from), Math.abs(to)));
+  const min = Math.ceil(Math.min(Math.abs(from), Math.abs(to)));
+  const max  = Math.floor(Math.max(Math.abs(from), Math.abs(to)));
 
   return Math.floor(Math.random() * (max- min) + min);
 };
-
-
 
 function checkStringLength (string, length) {
   return string.length <= length;
@@ -41,7 +39,7 @@ function checkStringLength (string, length) {
 checkStringLength('project', 23);
 
 const generateRandomArrayElement = function(array){
-  let el = generateRandomNumber(0,array.length-1);
+  const el = generateRandomNumber(0,array.length-1);
   return array[el];
 };
 
@@ -57,7 +55,7 @@ const createObject = () => {
 
 let similarWizards = [];
 for (let i=0;i<25;i++){
-  console.log(createObject());
+  similarWizards[i]=createObject();
 };
 
 
