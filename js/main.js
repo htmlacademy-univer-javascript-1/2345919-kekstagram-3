@@ -12,7 +12,7 @@ const description=[
 
 for (let i = 1; i<26; i++){
   id[i-1]=i;
-  URL[i-1] = "photos/" + i + ".jpg";
+  URL[i-1] = 'photos/' + i + '.jpg';
 }
 
 for (let i = 0; i<201; i++){
@@ -34,7 +34,7 @@ const generateRandomNumber = function(from, to){
 
 function checkStringLength (string, length) {
   return string.length <= length;
-};
+}
 
 checkStringLength('project', 23);
 
@@ -53,9 +53,9 @@ const createObject = () => {
   };
 };
 
-let similarObjects = [];
+const similarObjects = [];
 for (let i=0;i<25;i++){
   similarObjects[i]=createObject();
-};
+}
 
 
