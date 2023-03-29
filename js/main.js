@@ -12,7 +12,7 @@ const description=[
 
 for (let i = 1; i<26; i++){
   id[i-1]=i;
-  URL[i-1] = 'photos/' + `${i}` + '.jpg';
+  URL[i-1] = 'photos/' + i.toString() +'.jpg';
 }
 
 for (let i = 0; i<201; i++){
@@ -56,6 +56,7 @@ const createObject = () => {
 const similarObjects = [];
 for (let i=0;i<25;i++){
   similarObjects[i]=createObject();
+  console.log(createObject());
 }
 
 
