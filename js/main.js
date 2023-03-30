@@ -45,11 +45,11 @@ const generateRandomArrayElement = function(array){
 
 const createObject = () => ({
 
-    id: generateRandomArrayElement(id),
-    URL: generateRandomArrayElement(URL),
-    likes: generateRandomArrayElement(likes),
-    comments: generateRandomArrayElement(comments),
-    description: generateRandomArrayElement(description)
+  id: generateRandomArrayElement(id),
+  URL: generateRandomArrayElement(URL),
+  likes: generateRandomArrayElement(likes),
+  comments: generateRandomArrayElement(comments),
+  description: generateRandomArrayElement(description)
 
 });
 
