@@ -43,15 +43,15 @@ const generateRandomArrayElement = function(array){
   return array[el];
 };
 
-const createObject = (() => {
+const createObject = () => {
   return {
     id: generateRandomArrayElement(id),
     URL: generateRandomArrayElement(URL),
     likes: generateRandomArrayElement(likes),
     comments: generateRandomArrayElement(comments),
-    description: generateRandomArrayElement(description),
+    description: generateRandomArrayElement(description)
   };
-});
+};
 
 const similarObjects = [];
 for (let i=0;i<25;i++){
