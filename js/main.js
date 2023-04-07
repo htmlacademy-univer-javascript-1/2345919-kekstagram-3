@@ -1,2 +1,2 @@
-import { createObjects } from "./data";
+import { createObjects } from './data';
 createObjects();
