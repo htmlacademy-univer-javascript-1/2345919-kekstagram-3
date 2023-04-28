@@ -2,7 +2,7 @@ import { createObjects } from './data.js';
 
 
 const pictureTemplate = document.querySelector('#picture').content;
-const pictures = document.querySelector('.pictures');
+var pictures = document.querySelector('.pictures');
 const fragment = document.createDocumentFragment();
 
 const similarObjects = createObjects();
