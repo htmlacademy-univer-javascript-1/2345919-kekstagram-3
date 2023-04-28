@@ -11,7 +11,7 @@ photos.forEach((object) => {
 
   const objectElement = pictureTemplate.cloneNode(true);
   const fullPhoto = document.querySelector('.picture__img');
-  fullPhoto.textContent = object.URL;
+  fullPhoto.textContent = object.url;;
   objectElement.querySelector('.picture__likes').textContent = object.likes;
   objectElement.querySelector('.picture__comments').textContent = object.comments;
   fragment.appendChild(objectElement);
