@@ -46,12 +46,6 @@ function checkStringLength (string, length) {
 
 checkStringLength('project', 23);
 
-
-const generateRandomArrayElement = function(array){
-  const el = generateRandomNumber(0,array.length-1);
-  return array[el];
-};
-
 const OBJECT_COUNT = 25;
 
 const createPhoto = () => ({
