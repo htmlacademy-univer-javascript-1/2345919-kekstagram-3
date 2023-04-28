@@ -1,13 +1,13 @@
-import { createObjects } from './data.js';
+import { createPhotos } from './data.js';
 
 
 const pictureTemplate = document.querySelector('#picture').content;
 const pictures = document.querySelector('.pictures');
 const fragment = document.createDocumentFragment();
 
-const similarObjects = createObjects();
+const photos = createPhotos();
 
-similarObjects.forEach((object) => {
+photos.forEach((object) => {
 
   const objectElement = pictureTemplate.cloneNode(true);
   const fullPhoto = document.querySelector('.picture__img');
