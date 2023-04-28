@@ -1,7 +1,9 @@
+
 import {generateRandomArrayElement} from './util.js';
 
 const id = [];
 const url = [];
+
 const likes = [];
 const comments = [];
 const description=[
@@ -14,7 +16,9 @@ const description=[
 
 for (let i = 1; i<26; i++){
   id[i-1]=i;
+
   url[i-1] = `photos/${i}.jpg`;
+
 }
 
 for (let i = 0; i<201; i++){
@@ -39,12 +43,15 @@ const createPhoto = () => ({
 
   id: generateRandomArrayElement(id),
   url: generateRandomArrayElement(URL),
+
   likes: generateRandomArrayElement(likes),
   comments: generateRandomArrayElement(comments),
   description: generateRandomArrayElement(description)
 
 });
 
+
 const createPhotos = () => Array.from({length: OBJECT_COUNT}, createPhoto);
 
 export {createPhotos};
+
