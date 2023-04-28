@@ -1,5 +1,8 @@
+
+import {generateRandomArrayElement} from './util.js';
+
 const id = [];
-const URL = [];
+const url = [];
 const likes = [];
 const comments = [];
 const description=[
@@ -12,7 +15,8 @@ const description=[
 
 for (let i = 1; i<26; i++){
   id[i-1]=i;
-  URL[i-1] = `photos/${i}.jpg`;
+  url[i-1] = `photos/${i}.jpg`;
+
 }
 
 for (let i = 0; i<201; i++){
@@ -32,29 +36,22 @@ const generateRandomNumber = function(from, to){
   return Math.floor(Math.random() * (max-min) + min);
 };
 
-function checkStringLength (string, length) {
-  return string.length <= length;
-}
 
-checkStringLength('project', 23);
 
-const generateRandomArrayElement = function(array){
-  const el = generateRandomNumber(0,array.length-1);
-  return array[el];
-};
-SIMILAR_WIZARD_COUNT = 25;
 
-const createObject = () => ({
+const OBJECT_COUNT = 25;
+
+const createPhoto = () => ({
 
   id: generateRandomArrayElement(id),
-  URL: generateRandomArrayElement(URL),
+  url: generateRandomArrayElement(url),
   likes: generateRandomArrayElement(likes),
   comments: generateRandomArrayElement(comments),
   description: generateRandomArrayElement(description)
 
 });
 
-const createObjects = () => Array.from({length: SIMILAR_WIZARD_COUNT}, createObject);
 
-export {createObjects};
+const createPhotos = () => Array.from({length: OBJECT_COUNT}, createPhoto);
 
+export {createPhotos};

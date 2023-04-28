@@ -1,2 +1,3 @@
-import { createObjects } from "./data";
-console.log(createObjects());
+import { createPhotos } from './data.js';
+createPhotos();
+
