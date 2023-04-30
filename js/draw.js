@@ -1,5 +1,6 @@
 import { createPhotos } from './data.js';
 
+//Задание 7 часть 2
 
 const pictureTemplate = document.querySelector('#picture').content;
 const pictures = document.querySelector('.pictures');
