@@ -1,3 +1,4 @@
 import { createPhotos } from './data.js';
-createPhotos();
+import  './draw.js';
+console.log(JSON.stringify(createPhotos()));
 
