@@ -38,7 +38,7 @@ const OBJECT_COUNT = 25;
 const createPhoto = () => ({
 
   id: generateRandomArrayElement(id),
-  url: generateRandomArrayElement(URL),
+  url: generateRandomArrayElement(url),
   likes: generateRandomArrayElement(likes),
   comments: generateRandomArrayElement(comments),
   description: generateRandomArrayElement(description)

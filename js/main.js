@@ -1,2 +1,3 @@
 import { createPhotos } from './data.js';
-createPhotos();
+// eslint-disable-next-line no-console
+console.log(JSON.stringify(createPhotos()));
