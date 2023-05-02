@@ -8,15 +8,13 @@ const fragment = document.createDocumentFragment();
 
 const photos = createPhotos();
 
-photos.forEach((item) => {
+photos.forEach((object) => {
 
   const objectElement = pictureTemplate.cloneNode(true);
-  const fullPhoto = objectElement.querySelector('.picture__img');
-  const likes = objectElement.querySelector('.picture__likes');
-  const comments =  objectElement.querySelector('.picture__comments').textContent ;
-  fullPhoto.src = item.url;
-  likes.textContent = item.likes;
-  comments.textContent = item.comments;
+
+  objectElement.querySelector('.picture__img').src = object.url;
+  objectElement.querySelector('.picture__likes').textContent = object.likes;
+  objectElement.querySelector('.picture__comments').textContent = object.comments;
   fragment.appendChild(objectElement);
 });
 
