@@ -11,12 +11,10 @@ const photos = createPhotos();
 photos.forEach((item) => {
 
   const objectElement = pictureTemplate.cloneNode(true);
-  const fullPhoto = objectElement.querySelector('.picture__img');
-  const likes = objectElement.querySelector('.picture__likes');
-  const comments =  objectElement.querySelector('.picture__comments').textContent ;
-  fullPhoto.src = item.url;
-  likes.textContent = item.likes;
-  comments.textContent = item.comments;
+  objectElement.querySelector('.picture__img').src = item.url;
+  objectElement.querySelector('.picture__likes').textContent = item.likes;
+  objectElement.querySelector('.picture__comments').textContent = item.comments ;
+
   fragment.appendChild(objectElement);
 });
 

@@ -28,21 +28,6 @@ for (let i = 0; i<201; i++){
   }
 }
 
-
-
-const generateRandomNumber = function(from, to){
-  const min = Math.ceil(Math.min(Math.abs(from), Math.abs(to)));
-  const max  = Math.floor(Math.max(Math.abs(from), Math.abs(to)));
-
-  return Math.floor(Math.random() * (max-min) + min);
-};
-
-
-function checkStringLength (string, length) {
-  return string.length <= length;
-}
-
-
 const OBJECT_COUNT = 25;
 
 const createPhoto = () => ({
