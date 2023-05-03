@@ -11,4 +11,12 @@ const generateRandomArrayElement = function(array){
   return array[el];
 };
 
-export {generateRandomArrayElement};
+function checkStringLength (string, lengthmin, lengthmax) {
+  return string.length <= lengthmax && string.length>=lengthmin;
+
+}
+const isEscapeKey = function (evt) {
+  return evt.key === 'Escape';
+};
+
+export {generateRandomArrayElement, isEscapeKey,  checkStringLength};

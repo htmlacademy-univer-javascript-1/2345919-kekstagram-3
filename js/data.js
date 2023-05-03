@@ -30,12 +30,6 @@ for (let i = 0; i<201; i++){
 }
 
 
-function checkStringLength (string, length) {
-  return string.length <= length;
-}
-
-checkStringLength('project', 23);
-
 const OBJECT_COUNT = 25;
 
 const createPhoto = () => ({
