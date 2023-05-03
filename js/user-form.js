@@ -30,6 +30,9 @@ function openPhotoEditor(){
 function closePhotoEditor(){
   defoultEffect();
   defoultScale();
+  inputFile.value = '';
+  document.querySelector('.text__description').textContent ='';
+  document.querySelector('.text__description').textContent ='';
   imageEditingForm.classList.add('hidden');
   document.body.classList.remove('modal-open');
   document.removeEventListener('keydown', onFormEscKeydown);
