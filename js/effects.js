@@ -6,11 +6,10 @@ radioButtons.forEach((button) => {
     const className = button.value;
     imgPreview.className =  (`img-upload__preview effects__preview--${className}`);
   });
-
 });
 
 function defoultEffect (){
-  imgPreview.className = ('img-upload__preview effects__preview--none');
+  imgPreview.className = ('img-upload__previeweffects__preview--none');
 }
 export{defoultEffect};
 
