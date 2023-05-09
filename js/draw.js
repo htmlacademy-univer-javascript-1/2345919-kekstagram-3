@@ -1,22 +1,26 @@
-import { createPhotos } from './data.js';
+
 
 //Задание 7 часть 2
 
 const pictureTemplate = document.querySelector('#picture').content;
 const pictures = document.querySelector('.pictures');
-const fragment = document.createDocumentFragment();
 
-const photos = createPhotos();
 
-photos.forEach((object) => {
+const renderPhotos = (photos) => {
+  const fragment = document.createDocumentFragment();
+  photos.forEach(({url, likes, comments}) => {
 
-  const objectElement = pictureTemplate.cloneNode(true);
-  objectElement.querySelector('.picture__img').src = object.url;
-  objectElement.querySelector('.picture__likes').textContent = object.likes;
-  objectElement.querySelector('.picture__comments').textContent = object.comments;
-  fragment.appendChild(objectElement);
-});
+    const objectElement = pictureTemplate.cloneNode(true);
+    objectElement.querySelector('.picture__img').src = url;
+    objectElement.querySelector('.picture__likes').textContent = likes;
+    objectElement.querySelector('.picture__comments').textContent = comments;
+    fragment.appendChild(objectElement);
+  });
 
-pictures.appendChild(fragment);
+  pictures.appendChild(fragment);
+};
+const clearPhotos = () => {
+  pictures.innerHTML = '';
+};
 
-export {pictures};
+export {renderPhotos, clearPhotos};

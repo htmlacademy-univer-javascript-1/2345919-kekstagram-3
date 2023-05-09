@@ -1,5 +1,9 @@
-import { createPhotos } from './data.js';
-import './validation.js';
-// eslint-disable-next-line no-console
-console.log(JSON.stringify(createPhotos()));
+import { renderPhotos } from './draw.js';
+import  './validation.js';
+import './user-form.js';
+import { getData } from './api.js';
+
+getData((photos) => {
+  renderPhotos(photos);
+});
 
