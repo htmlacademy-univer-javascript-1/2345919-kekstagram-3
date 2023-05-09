@@ -1,35 +1,41 @@
-import { checkStringLength } from './util';
+import { checkStringLength} from './util.js';
+import { sendData } from './api.js';
+import { blockSubmitButton } from './user-form.js';
 const form = document.querySelector('.img-upload__form');
 const comment = document.querySelector('.text__description');
 const hashtag = document.querySelector('.text__hashtags');
-const regex = /^#[A-Za-zА-Яа-яЁё0-9]{1,20}/;
-
 const pristine = new Pristine(form, {
   // class of the parent element where the error/success class is added
   classTo: 'img-upload__text',
-  errorClass: 'form__item--invalid',
-  successClass: 'form__item--valid',
+  errorClass: 'fimg-upload__text--invalid',
+  successClass: 'img-upload__text--valid',
   // class of the parent element where error text element is appended
-  errorTextParent: 'upload__text',
+  errorTextParent: 'img-upload__text',
   // type of element to create for the error text
   errorTextTag: 'span',
   // class of the error text element
   errorTextClass: 'form__error'
 });
-pristine.addValidator(comment, checkComment, 'Длина комментария должнабыть от 20 до 140 символов!');
-pristine.addValidator(hashtag, checkHashtag, 'Неверно задан хештег: начни с #');
+pristine.addValidator(comment, checkComment, 'Длина комментария должна быть от 20 до 140 символов!');
 
 function checkComment(com) {
-  return checkStringLength(com, 20, 140);
+  return !checkStringLength(com, 19) && checkStringLength(com, 140) ;
 }
 
-function checkHashtag (hash){
-  return regex.test(hash);
+function clearComment (){
+  comment.value = '';
 }
+function clearHashtags (){
+  hashtag.value = '';
+}
+
 form.addEventListener('submit', (evt) => {
-  if (!pristine.validate()) {
-    evt.preventDefault();
+  evt.preventDefault();
+  const isValid = pristine.validate();
+  if (isValid) {
+    blockSubmitButton();
+    sendData(evt);
   }
-
 });
 
+export { clearComment, clearHashtags};
